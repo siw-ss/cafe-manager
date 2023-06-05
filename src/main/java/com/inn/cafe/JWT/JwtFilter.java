@@ -29,6 +29,7 @@ public class JwtFilter extends OncePerRequestFilter {
     private final CustomerUserDetailsService userDetailsService;
 
     Claims claims = null;
+    private String userEmail;
 
     @Override
     protected void doFilterInternal(
@@ -41,7 +42,6 @@ public class JwtFilter extends OncePerRequestFilter {
         }else{
         final String authHeader = request.getHeader("Authorization");
         final String jwtToken;
-        final String userEmail;
 
         if (authHeader == null || !authHeader.startsWith("Bearer ")) {
             filterChain.doFilter(request,response);
@@ -71,4 +71,9 @@ public class JwtFilter extends OncePerRequestFilter {
     public boolean isAdmin(){
         return "admin".equalsIgnoreCase((String) claims.get("role"));
     }
+    public boolean isUser(){
+        return "user".equalsIgnoreCase((String) claims.get("role"));
+    }
+
+    public String getCurrentUser(){return userEmail;}
 }

@@ -1,5 +1,6 @@
 package com.inn.cafe.POJO;
 
+import com.inn.cafe.wrapper.UserWrapper;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.DynamicInsert;
@@ -13,6 +14,9 @@ import java.util.Collection;
 import java.util.List;
 
 @NamedQuery(name = "User.findByEmailId",query="select u from User u where u.email=:email")
+@NamedQuery(name = "User.getAllUser",query = "select new com.inn.cafe.wrapper.UserWrapper(u.id,u.name,u.email,u.contactNumber,u.status) from User u where u.role='user'")
+@NamedQuery(name = "User.updateStatus", query = "update User u set u.status=:status where u.id=:id")
+@NamedQuery(name = "User.getAllAdmin",query = "select u.email from User u where u.role='admin'")
 
 @Data
 @Builder
