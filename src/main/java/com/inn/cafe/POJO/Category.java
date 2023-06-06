@@ -8,8 +8,10 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
+import java.io.Serial;
 import java.io.Serializable;
 
+@NamedQuery(name = "Category.getAllCategory",query = "select c from Category c")
 @Data
 @Builder
 @NoArgsConstructor
@@ -20,6 +22,7 @@ import java.io.Serializable;
 @Table(name = "category")
 public class Category implements Serializable {
 
+    @Serial
     private static final long serialVersionUID = 1L;
 
     @Id
@@ -30,19 +33,5 @@ public class Category implements Serializable {
     @Column(name = "name")
     private String name;
 
-    public Integer getId(){
-        return id;
-    }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 }
