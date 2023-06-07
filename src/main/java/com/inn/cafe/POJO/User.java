@@ -29,8 +29,7 @@ import java.util.List;
 @Table(name = "user")
 public class User implements UserDetails {
 
-    @Serial
-    private static final long serialVersionUID = 1L ;
+    private static final Long serialVersionUID = 1L ;
 
     @Id//jakarta
     @GeneratedValue(strategy = GenerationType.IDENTITY)

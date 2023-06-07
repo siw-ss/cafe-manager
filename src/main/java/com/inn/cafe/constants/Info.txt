@@ -1,0 +1,19 @@
+#ABOUT ARCHITECTURE
+
+MVCS - Model View Controller Service
+
+The service layer can be interpreted a lot of ways, but it's usually where you have your core business processing logic, and sits below your MVC architecture, but above your data access architecture.
+
+For example, you layer of a complete system may look like this:
+
+1.View Layer: Your MVC framework & code of choice
+2.Service Layer: Your Controller will call this layer's objects to get or update Models, or other requests.
+3.Data Access Objects: These are abstractions that your service layer will call to get/update the data it needs. This layer will generally either call a Database or some other system (eg: LDAP server, web service, or NoSql-type DB)
+
+The service layer would then be responsible for:
+
+* Retrieving and creating your 'Model' from various data sources (or data access objects).
+* Updating values across various repositories/resources.
+* Performing application-specific logic and manipulations, etc.
+
+The Model you use in your MVC may or may not come from your services. You may want to take the results your service gives you and manipulate them into a model that's more specific to your medium (eg: a web page).

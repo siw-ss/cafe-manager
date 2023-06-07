@@ -4,11 +4,10 @@ import com.google.common.base.Strings;
 import com.inn.cafe.JWT.JwtFilter;
 import com.inn.cafe.POJO.Category;
 import com.inn.cafe.constants.CafeConstants;
-import com.inn.cafe.dao.CategoryDAO;
+import com.inn.cafe.dao.CategoryDao;
 import com.inn.cafe.service.CategoryService;
 import com.inn.cafe.utils.CafeUtils;
 import lombok.extern.slf4j.Slf4j;
-import org.checkerframework.checker.units.qual.C;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,7 +23,7 @@ import java.util.Optional;
 public class CategoryServiceImpl implements CategoryService {
 
     @Autowired
-    CategoryDAO categoryDAO;
+    CategoryDao categoryDAO;
     @Autowired
     JwtFilter jwtFilter;
 
