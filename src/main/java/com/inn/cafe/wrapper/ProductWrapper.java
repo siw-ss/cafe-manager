@@ -1,5 +1,4 @@
 package com.inn.cafe.wrapper;
-
 import lombok.Data;
 
 @Data
@@ -23,8 +22,11 @@ public class ProductWrapper {
         this.status=status;
         this.categoryId=categoryId;
         this.categoryName=categoryName;
+    }
 
-
+    public ProductWrapper(Integer id,String name){
+        this.id=id;
+        this.name=name;
     }
 
 }
