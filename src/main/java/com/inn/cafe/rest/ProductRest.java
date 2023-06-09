@@ -29,4 +29,7 @@ public interface ProductRest {
 
     @PostMapping(path = "/getByCategory/{id}")
     ResponseEntity<List<ProductWrapper>> getByCategory(@PathVariable Integer id);
+
+    @PostMapping(path = "/getById/{id}")
+    ResponseEntity<ProductWrapper> getById(@PathVariable Integer id);
 }
