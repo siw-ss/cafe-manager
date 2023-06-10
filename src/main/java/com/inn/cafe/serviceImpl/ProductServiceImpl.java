@@ -37,7 +37,7 @@ public class ProductServiceImpl implements ProductService {
                 }
                 return CafeUtils.getResponseEntity(CafeConstants.INVALID_DATA,HttpStatus.BAD_REQUEST);
             }else
-                return CafeUtils.getResponseEntity(CafeConstants.UNAUTHARIZED_ACCESS, HttpStatus.UNAUTHORIZED);
+                return CafeUtils.getResponseEntity(CafeConstants.UNAUTHORIZED_ACCESS, HttpStatus.UNAUTHORIZED);
         }catch (Exception ex){
             ex.printStackTrace();
         }
@@ -101,7 +101,7 @@ public class ProductServiceImpl implements ProductService {
                     return CafeUtils.getResponseEntity(CafeConstants.INVALID_DATA,HttpStatus.BAD_REQUEST);
                 }
             }else {
-                return CafeUtils.getResponseEntity(CafeConstants.UNAUTHARIZED_ACCESS,HttpStatus.UNAUTHORIZED);
+                return CafeUtils.getResponseEntity(CafeConstants.UNAUTHORIZED_ACCESS,HttpStatus.UNAUTHORIZED);
             }
         }catch (Exception ex){
             ex.printStackTrace();
@@ -122,7 +122,7 @@ public class ProductServiceImpl implements ProductService {
                     return CafeUtils.getResponseEntity("Product id doesn't exist",HttpStatus.OK);
                 }
             }else {
-                return CafeUtils.getResponseEntity(CafeConstants.UNAUTHARIZED_ACCESS,HttpStatus.UNAUTHORIZED);
+                return CafeUtils.getResponseEntity(CafeConstants.UNAUTHORIZED_ACCESS,HttpStatus.UNAUTHORIZED);
             }
         }catch (Exception ex){
             ex.printStackTrace();
@@ -144,7 +144,7 @@ public class ProductServiceImpl implements ProductService {
                 }
             }
             else {
-                return CafeUtils.getResponseEntity(CafeConstants.UNAUTHARIZED_ACCESS,HttpStatus.UNAUTHORIZED);
+                return CafeUtils.getResponseEntity(CafeConstants.UNAUTHORIZED_ACCESS,HttpStatus.UNAUTHORIZED);
             }
         }catch (Exception ex){
             ex.printStackTrace();

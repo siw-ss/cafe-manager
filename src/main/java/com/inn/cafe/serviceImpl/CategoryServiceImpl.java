@@ -36,7 +36,7 @@ public class CategoryServiceImpl implements CategoryService {
                     return CafeUtils.getResponseEntity("Category Added Successfully",HttpStatus.OK);
                 }
             }else{
-                return CafeUtils.getResponseEntity(CafeConstants.UNAUTHARIZED_ACCESS,HttpStatus.UNAUTHORIZED);
+                return CafeUtils.getResponseEntity(CafeConstants.UNAUTHORIZED_ACCESS,HttpStatus.UNAUTHORIZED);
             }
         }catch (Exception ex){
             ex.printStackTrace();
@@ -95,7 +95,7 @@ public class CategoryServiceImpl implements CategoryService {
                 }
                 return CafeUtils.getResponseEntity(CafeConstants.INVALID_DATA,HttpStatus.BAD_REQUEST);
             }else {
-                return CafeUtils.getResponseEntity(CafeConstants.UNAUTHARIZED_ACCESS, HttpStatus.UNAUTHORIZED);
+                return CafeUtils.getResponseEntity(CafeConstants.UNAUTHORIZED_ACCESS, HttpStatus.UNAUTHORIZED);
             }
         }catch (Exception ex){
             ex.printStackTrace();
